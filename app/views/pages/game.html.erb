@@ -1,0 +1,20 @@
+<h1>game</h1>
+
+
+<!-- # render the page with a new random grid of words -->
+<h2>Here's your grid :</h2>
+<%= @grid %>
+
+<p>And now...</p>
+
+<form action="/score" method='get'>
+  <div align="center">
+  <label for="question">Your guess</label>
+  <input type="text" id="guess" name="guess" placeholder="Your guess?">
+  <input type='hidden' name='grid' value='<%= @grid%>' >
+ <!--  Use hidden to reuse the grid in the method score, otherwise the grid is erased and not reusable -->
+ <input type="hidden" name='time' value='<%= @time %>'>
+  <input type="submit" value="Go on!">
+  </div>
+</form>
+
